@@ -1,43 +1,36 @@
 const mongoose = require("mongoose");
 
 const treesSchema = new mongoose.Schema({
-  name: {
+  radius: {
     type: String,
-    required: [true, "nikName is required"],
+    required: [true, "radius is required"],
   },
-  password: {
+  age: {
     type: String,
-    required: [true, "Password is required"],
+    required: [true, "age is required"],
   },
-  email: {
+  kindOfTree: {
     type: String,
-    required: [true, "Email is required"],
-    unique: true,
+    required: [true, "kindOfTree is required"],
   },
-  token: {
+  condition: {
     type: String,
-    default: null,
+    required: [true, "condition is required"],
   },
-  refreshToken: {
+  registrationNumber: {
     type: String,
-    default: null,
+    required: [true, "registrationNumber is required"],
   },
-  verify: {
-    type: Boolean,
-    default: false,
-  },
-  verificationToken: {
-    type: String,
-    required: [true, "Verify token is required"],
-  },
-  contacts: {
+  necessaryWorks: {
     type: Object,
     default: [],
   },
 });
 
-const Trees = mongoose.model("trees", treesSchema);
+const Trees = mongoose.model("admins-approves", treesSchema);
+const ApproveTrees = mongoose.model("trees", treesSchema);
 
 module.exports = {
-    Trees,
+  Trees,
+  ApproveTrees,
 };
