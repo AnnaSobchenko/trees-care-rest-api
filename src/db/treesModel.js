@@ -25,10 +25,24 @@ const treesSchema = new mongoose.Schema({
     type: Object,
     default: [],
   },
+  location: {
+    type: Object,
+    default: {
+      lat: {
+        type: String,
+        required: [true, "lat is required"],      
+      },
+      lng:  {
+        type: String,
+        required: [true, "lat is required"],      
+      },
+    },
+    required: [true, "location is required"],
+  },
 });
 
-const Trees = mongoose.model("admins-approves", treesSchema);
-const ApproveTrees = mongoose.model("trees", treesSchema);
+const ApproveTrees = mongoose.model("admins-approves", treesSchema);
+const Trees = mongoose.model("trees", treesSchema);
 
 module.exports = {
   Trees,

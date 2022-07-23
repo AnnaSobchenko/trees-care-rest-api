@@ -10,15 +10,14 @@ const {
 const {
   getTrees,
   addTrees,
-  updateTrees,
-
-  deleteTree,
+  // updateTrees,
+  // deleteTree,
 } = require("../../controllers/trees");
 
-router.get("/trees", catchErrors(getTrees));
+router.get("/", catchErrors(getTrees));
 
-router.post("/addTrees", catchErrors(addTrees));
-router.get("/updateTrees", catchErrors(updateTrees));
-router.get("/:treeId", catchErrors(deleteTree));
+router.post("/add", catchErrors(addTrees));
+// router.get("/updateTrees", catchErrors(updateTrees));
+// router.get("/:treeId", catchErrors(deleteTree));
 
 module.exports = router;

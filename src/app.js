@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const usersRouter = require("./routes/api/users");
 const treesRouter = require("./routes/api/trees");
-const adminRouter = require("./routes/api/trees");
+const adminRouter = require("./routes/api/admin");
 
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("../swagger.json");

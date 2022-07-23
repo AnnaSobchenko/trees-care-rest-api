@@ -28,8 +28,8 @@ const signupUser = async (body) => {
     to: email, // Change to your recipient
     from: "annsbchnk@gmail.com", // Change to your verified sender
     subject: "Sending  verification email",
-    text: `https://it-revolution22-rest-api.herokuapp.com/api/users/verify/${verificationToken}`,
-    html: `<p>Hello, verificy your email, please click <a href="https://it-revolution22-rest-api.herokuapp.com/api/users/verify/${verificationToken}">Confirm email</a></p>`,
+    text: `https://tree-care-rest-api.herokuapp.com/api/users/verify/${verificationToken}`,
+    html: `<p>Hello, verificy your email, please click <a href="https://tree-care-rest-api.herokuapp.com/api/users/verify/${verificationToken}">Confirm email</a></p>`,
   };
   sgMail
     .send(msg)
@@ -104,8 +104,8 @@ const verificationSecondUser = async (body) => {
       to: email, // Change to your recipient
       from: "annsbchnk@gmail.com", // Change to your verified sender
       subject: "Sending  verification email",
-      text: `https://it-revolution22-rest-api.herokuapp.com/api/users/verify/${verificationToken}`,
-      html: `<p>Hello, verificy your email, please click <a href="https://it-revolution22-rest-api.herokuapp.com/api/users/verify/${verificationToken}">Confirm email</a></p>`,
+      text: `https://tree-care-rest-api.herokuapp.com/api/users/verify/${verificationToken}`,
+      html: `<p>Hello, verificy your email, please click <a href="https://tree-care-rest-api.herokuapp.com/api/users/verify/${verificationToken}">Confirm email</a></p>`,
     };
     return await sgMail
       .send(msg)

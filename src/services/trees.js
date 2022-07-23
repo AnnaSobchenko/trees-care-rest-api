@@ -11,6 +11,7 @@ const addAllTrees = async (body) => {
     kindOfTree,
     condition,
     registrationNumber,
+    location,
     necessaryWorks,
   } = body;
 
@@ -20,21 +21,22 @@ const addAllTrees = async (body) => {
     kindOfTree,
     condition,
     registrationNumber,
+    location,
     necessaryWorks,
   });
   return result;
 };
-const updateAllTrees = async () => {
-  const result = await Trees.find({});
-  return result;
-};
-const deleteOneTree = async () => {
-  const result = await Trees.find({});
-  return result;
-};
+// const updateAllTrees = async () => {
+//   const result = await Trees.find({});
+//   return result;
+// };
+// const deleteOneTree = async () => {
+//   const result = await Trees.find({});
+//   return result;
+// };
 module.exports = {
   getAllTrees,
   addAllTrees,
-  updateAllTrees,
-  deleteOneTree,
+  // updateAllTrees,
+  // deleteOneTree,
 };
