@@ -10,8 +10,8 @@ const getTrees = async (req, res, next) => {
   res.status(200).send(allTrees);
 };
 const addTrees = async (req, res, next) => {
-  const allTrees = await addAllTrees(req.body);
-  res.status(200).send(allTrees);
+  const addedTrees = await addAllTrees(req.body);
+  res.status(200).send(addedTrees);
 };
 const updateTrees = async (req, res, next) => {
   const allTrees = await updateAllTrees();

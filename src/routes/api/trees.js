@@ -15,7 +15,7 @@ const {
   deleteTree,
 } = require("../../controllers/trees");
 
-router.get("/trees", catchErrors(getTrees));
+router.get("/", catchErrors(getTrees));
 
 router.post("/addTrees", catchErrors(addTrees));
 router.get("/updateTrees", catchErrors(updateTrees));
