@@ -27,8 +27,10 @@ const treesSchema = new mongoose.Schema({
   },
 });
 
-const Trees = mongoose.model("trees", treesSchema);
+const Trees = mongoose.model("admins-approves", treesSchema);
+const ApproveTrees = mongoose.model("trees", treesSchema);
 
 module.exports = {
   Trees,
+  ApproveTrees,
 };
