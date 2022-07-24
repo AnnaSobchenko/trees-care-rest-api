@@ -1,4 +1,4 @@
-const {ApproveTrees } = require("../db/treesModel");
+const { ApproveTrees } = require("../db/treesModel");
 const { Trees } = require("../db/approveModel");
 
 const getAllApproves = async () => {
@@ -6,34 +6,26 @@ const getAllApproves = async () => {
   return result;
 };
 
-const methodTree = async (body) => {  
-  console.log('body', body)
+const methodTree = async (body) => {
   const { trees, method, _id } = body;
-const {
-        // id=_id,
-        radius,
-        age,
-        kindOfTree,
-        condition,
-        necessaryWorks,
-        location,
-        registrationNumber,
-        image,
-      } = trees;
-      console.log('method', method)
-      console.log('trees', trees)
-      
+  const {
+    radius,
+    age,
+    kindOfTree,
+    condition,
+    necessaryWorks,
+    location,
+    registrationNumber,
+    image,
+  } = trees;
+
   switch (method) {
     case "add":
-      console.log('first add')
       const result = await Trees.create(trees);
-      console.log('result', result)
       break;
 
     case "update":
-      console.log('_id', _id)
-      const id=trees._id
-      console.log('trees_id',id)
+      const id = trees._id;
       await Trees.findOneAndUpdate(
         { registrationNumber },
         {
@@ -47,10 +39,10 @@ const {
         }
       );
       break;
-      case "delete":
-        const idDel=trees._id
-        await Trees.findOneAndDelete({ idDel });
-        break;
+    case "delete":
+      const registrationNumberDel = trees.registrationNumber;
+      await Trees.findOneAndDelete({ registrationNumberDel });
+      break;
   }
   await ApproveTrees.findOneAndDelete({ _id });
   return "Operation success";
@@ -58,5 +50,5 @@ const {
 
 module.exports = {
   getAllApproves,
-  methodTree
+  methodTree,
 };
