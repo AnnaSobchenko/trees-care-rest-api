@@ -1,12 +1,6 @@
 const mongoose = require("mongoose");
 
-const uuid = require("uuid");
-
-
-
-const treesSchema = new mongoose.Schema({
-  trees: {
-    type: Object,
+const approveTreesSchema = new mongoose.Schema({ 
     radius: {
       type: String,
       required: [true, "radius is required"],
@@ -25,7 +19,7 @@ const treesSchema = new mongoose.Schema({
     },
     registrationNumber: {
       type: String,
-      required: [true, "registrationNumber is required"],     
+      required: [true, "registrationNumber is required"],
     },
     necessaryWorks: {
       type: Object,
@@ -45,21 +39,15 @@ const treesSchema = new mongoose.Schema({
       },
       required: [true, "location is required"],
     },
-    image: {
-      type: String,
+    image:{
+      type:String,
       required: [true, "image is required"],
-    },
-  },
-  method: {
-    type: String,
-    required: [true, "method is required"],
-  },
+    }
+ 
 });
 
-const ApproveTrees = mongoose.model("admins-approves", treesSchema);
-// const Trees = mongoose.model("trees", treesSchema);
+const Trees = mongoose.model("trees", approveTreesSchema);
 
 module.exports = {
-  // Trees,
-  ApproveTrees,
+  Trees,
 };

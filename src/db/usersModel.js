@@ -34,6 +34,10 @@ const usersSchema = new mongoose.Schema({
     type: Object,
     default: [],
   },
+  date:{
+    type:String,
+    default: new Date()
+  }
 });
 
 const Users = mongoose.model("users", usersSchema);

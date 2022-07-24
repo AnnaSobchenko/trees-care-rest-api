@@ -12,12 +12,13 @@ const {
   addTreeController,
   updateTreeController,
   deleteTreeController,
+  methodTreeController,
 } = require("../../controllers/admins");
 
 router.get("/", catchErrors(getAllApprovesController));
 
-router.post("/add", catchErrors(addTreeController));
-router.post("/update", catchErrors(updateTreeController));
-router.delete("/:treeId", catchErrors(deleteTreeController));
+router.post("/", catchErrors(methodTreeController));
+// router.post("/update", catchErrors(updateTreeController));
+// router.delete("/:treeId", catchErrors(deleteTreeController));
 
 module.exports = router;

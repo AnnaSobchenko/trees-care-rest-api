@@ -1,42 +1,19 @@
-const { Trees, ApproveTrees } = require("../db/treesModel");
+const {ApproveTrees } = require("../db/treesModel");
+const { Trees } = require("../db/approveModel");
+const uuid = require("uuid");
 
 const getAllTrees = async () => {
   const result = await Trees.find({});
   return result;
 };
 const addAllTrees = async (body) => {
-  const {
-    radius,
-    age,
-    kindOfTree,
-    condition,
-    registrationNumber,
-    location,
-    necessaryWorks,
-  } = body;
-
-  const result = await ApproveTrees.create({
-    radius,
-    age,
-    kindOfTree,
-    condition,
-    registrationNumber,
-    location,
-    necessaryWorks,
-  });
-  return result;
+  const registrationNumber = uuid.v4();  
+  const data={...body,trees: {...body.trees,registrationNumber}}
+   await ApproveTrees.create(data);
+  return "the tree's information send for base";
 };
-// const updateAllTrees = async () => {
-//   const result = await Trees.find({});
-//   return result;
-// };
-// const deleteOneTree = async () => {
-//   const result = await Trees.find({});
-//   return result;
-// };
+
 module.exports = {
   getAllTrees,
   addAllTrees,
-  // updateAllTrees,
-  // deleteOneTree,
 };
