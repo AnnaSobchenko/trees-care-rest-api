@@ -6,6 +6,11 @@ const getAllTrees = async () => {
   const result = await Trees.find({});
   return result;
 };
+const getOneTree = async (_id) => {
+  console.log('_id', _id)
+  const result = await Trees.find({_id});
+  return result;
+};
 const addAllTrees = async (body) => {
   const registrationNumber = uuid.v4();  
   const data={...body,trees: {...body.trees,registrationNumber}}
@@ -16,4 +21,5 @@ const addAllTrees = async (body) => {
 module.exports = {
   getAllTrees,
   addAllTrees,
+  getOneTree
 };

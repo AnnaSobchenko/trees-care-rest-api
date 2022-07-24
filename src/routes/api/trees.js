@@ -10,6 +10,7 @@ const {
 const {
   getTrees,
   addTrees,
+  getOneTreeController,
   // updateTrees,
   // deleteTree,
 } = require("../../controllers/trees");
@@ -18,6 +19,6 @@ router.get("/", catchErrors(getTrees));
 
 router.post("/add", catchErrors(addTrees));
 // router.get("/updateTrees", catchErrors(updateTrees));
-// router.get("/:treeId", catchErrors(deleteTree));
+router.get("/:treeId", catchErrors(getOneTreeController));
 
 module.exports = router;
