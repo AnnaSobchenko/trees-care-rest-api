@@ -2,8 +2,6 @@ const mongoose = require("mongoose");
 
 const uuid = require("uuid");
 
-
-
 const treesSchema = new mongoose.Schema({
   trees: {
     type: Object,
@@ -25,7 +23,7 @@ const treesSchema = new mongoose.Schema({
     },
     registrationNumber: {
       type: String,
-      required: [true, "registrationNumber is required"],     
+      required: [true, "registrationNumber is required"],
     },
     necessaryWorks: {
       type: Object,
